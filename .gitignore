@@ -35,6 +35,7 @@ coverage/
 
 # Production build
 /build
+renderer/.next
 
 # Miscellaneous
 *.swp
@@ -44,3 +45,5 @@ coverage/
 *.rej
 *.sublime-project
 *.sublime-workspace
+renderer/.next/trace
+renderer/.next/cache/webpack/client-development/0.pack.gz
