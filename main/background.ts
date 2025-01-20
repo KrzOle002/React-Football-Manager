@@ -4,6 +4,7 @@ import serve from 'electron-serve'
 import { createWindow } from './helpers'
 import sequelize from './database'
 import './ipc/playerHandler'
+import { createSeasons } from './utils/seasonCreator'
 
 const isProd = process.env.NODE_ENV === 'production'
 
@@ -30,6 +31,8 @@ if (isProd) {
 			preload: path.join(__dirname, 'preload.js'),
 		},
 	})
+
+	createSeasons()
 
 	if (isProd) {
 		await mainWindow.loadURL('app://./home')

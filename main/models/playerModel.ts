@@ -3,36 +3,61 @@ import sequelize from '../database/index'
 
 class Player extends Model {
 	public id!: number
-	public name!: string
-	public position!: string
-	public rating!: number
-	public season!: number
+	public firstName!: string
+	public lastName!: string
+	public birthday!: Date
+	public nationality!: string
+	public foot!: string
+	public height!: number
+	public weight!: number
+	public minPotential!: number
+	public maxPotential!: number
 	public createdAt!: Date
 	public updatedAt!: Date
 }
 
 Player.init(
 	{
-		name: {
+		firstName: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		position: {
+		lastName: {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
-		rating: {
+		birthday: {
+			type: DataTypes.DATE,
+			allowNull: false,
+		},
+		nationality: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		foot: {
+			type: DataTypes.STRING,
+			allowNull: false,
+		},
+		height: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
-		season: {
+		weight: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
+		minPotential: {
+			type: DataTypes.INTEGER,
+			allowNull: false,
+		},
+		maxPotential: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
 	},
 	{
 		sequelize,
-		modelName: 'player',
+		modelName: 'players',
 		timestamps: true,
 	}
 )
